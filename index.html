@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic Ball</title>
+</head>
+<body style="background-color: rgb(30, 92, 146);">
+    <script>
+        const magicBall = {
+            1: "The stars align in your favor.",
+            2: "A challenge will turn into an opportunity.",
+            3: "Unexpected joy is on the horizon.",
+            4: "Trust your instincts—they won't lead you astray.",
+            5: "A decision you make today will have lasting effects.",
+            6: "New connections will bring unexpected benefits.",
+            7: "Your hard work will soon pay off.",
+            8: "Embrace change—it will lead you to something better.",
+            question: function() {
+                let i  = prompt("Do you feel like you need clarity on something important?");
+                if (i.length > 20) {
+                    alert("Please do not be so verbose.");
+                    this.question();
+                } else {
+                    let number = Math.floor(Math.random() * 8) + 1;
+                    alert(`${this[number]}`);
+                }
+            }
+        }
+
+        magicBall.question();
+    </script>
+</body>
+</html>
